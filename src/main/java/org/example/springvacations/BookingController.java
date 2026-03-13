@@ -12,18 +12,17 @@ import java.util.List;
 @Data
 
 @RestController
-@RequestMapping("/booking")
 public class BookingController {
 
     private final BookingService service;
 
 
-    @GetMapping
+    @GetMapping("/booking")
     public List<Booking> getBookings() {
         return service.getAllBookings();
     }
 
-    @PostMapping
+    @PostMapping("/booking")
     public ResponseEntity<?> createBooking(@RequestBody Booking booking) {
 
         try {
